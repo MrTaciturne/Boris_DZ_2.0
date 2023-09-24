@@ -27,7 +27,7 @@ public class Producer implements Runnable, AutoCloseable{
                 if (queue.size() < MAX_SIZE) {
                    number = random.nextInt(10);
                    queue.add(number);
-                    System.out.println("*** добавил " + number + " ***");
+                    System.out.println("   *** добавил " + number + " ***");
 //                    notifyAll();
 //                    wait();
                     TimeUnit.SECONDS.sleep(random.nextInt(7) + 2);

@@ -1,13 +1,10 @@
 package independent_work_11;
 
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.PriorityBlockingQueue;
+import java.util.concurrent.*;
 
 public class Runner {
     public static void main(String[] args) {
-        BlockingQueue<Integer> queue = new PriorityBlockingQueue<>();
+        BlockingQueue<Integer> queue = new ArrayBlockingQueue<>(10);
         Thread consumer = new Thread(new Consumer(queue, 10));
         Thread producer = new Thread(new Producer(queue, 10));
 
